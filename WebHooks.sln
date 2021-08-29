@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooks", "WebHooks\WebHooks.csproj", "{1338C118-EA53-4828-91DB-F2F566491326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHooksSandbox", "WebHooksSandbox\WebHooksSandbox.csproj", "{3D7F969F-8703-487D-8E44-12A79CD26022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1338C118-EA53-4828-91DB-F2F566491326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1338C118-EA53-4828-91DB-F2F566491326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1338C118-EA53-4828-91DB-F2F566491326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1338C118-EA53-4828-91DB-F2F566491326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7F969F-8703-487D-8E44-12A79CD26022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7F969F-8703-487D-8E44-12A79CD26022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7F969F-8703-487D-8E44-12A79CD26022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7F969F-8703-487D-8E44-12A79CD26022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59C46A86-78B9-4930-A284-B7C953DAAC75}
+	EndGlobalSection
+EndGlobal
