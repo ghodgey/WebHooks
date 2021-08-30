@@ -5,7 +5,7 @@ using WebHooks.Common.Interfaces;
 
 namespace WebHooks
 {
-    internal class WebHooksConfiguration : IWebHooksConfiguration
+    public class WebHooksConfiguration : IWebHooksConfiguration
     {
         public TimeSpan TimeoutDuration { get; set; } = TimeSpan.FromSeconds(60);
 

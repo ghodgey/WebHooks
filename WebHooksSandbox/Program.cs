@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using WebHooks.Common.Enums;
+using WebHooks.Common.Extensions;
+using WebHooks.Common.Interfaces;
 
 namespace WebHooksSandbox
 {
@@ -6,7 +10,16 @@ namespace WebHooksSandbox
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Starting sandbox...");
+
+            var services = new ServiceCollection();
+            services.AddWebHooks();
+            services.BuildServiceProvider();
+            var serviceProvider = services.BuildServiceProvider();
+            var webHookDefinitionManager = serviceProvider.GetService<IWebHookDefinitionManager>();
+
+            var nameOfWebHookTest = webHookDefinitionManager.Get(nameof(WebHookDefinitionType));
+
         }
     }
 }
