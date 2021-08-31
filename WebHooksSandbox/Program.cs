@@ -13,7 +13,12 @@ namespace WebHooksSandbox
             Console.WriteLine("Starting sandbox...");
 
             var services = new ServiceCollection();
-            services.AddWebHooks();
+            services.AddWebHooks(option =>
+            {
+                option.Manager.Add(nameof(WebHookDefinitionType.DocsReceived));
+                option.Manager.Add(nameof(WebHookDefinitionType.OrderCompleted));
+            });
+
             services.BuildServiceProvider();
             var serviceProvider = services.BuildServiceProvider();
             var webHookDefinitionManager = serviceProvider.GetService<IWebHookDefinitionManager>();

@@ -1,24 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System.Collections.Generic;
-using WebHooks.Common.Enums;
+using System;
 using WebHooks.Common.Interfaces;
-using WebHooks.Common.Models;
 
 namespace WebHooks.Common.Extensions
 {
     public static class WebHookServiceExtensions
     {
-        public static void AddWebHooks(this IServiceCollection services)
+        public static IServiceCollection AddWebHooks(this IServiceCollection services, Action<IWebHookDefinitionContext> webHookDefinitionContext)
         {
             services.AddTransient<IWebHookDefinitionContext, WebHookDefinitionContext>();
-            services.AddSingleton<IWebHookDefinitionManager>(
-                new WebHookDefinitionManager(new List<WebHookDefinition>
-                {
-                    new WebHookDefinition(nameof(WebHookDefinitionType.DocsReceived))
-                }));
+            services.AddSingleton<IWebHookDefinitionManager, WebHookDefinitionManager>();
+            webHookDefinitionContext(new WebHookDefinitionContext(new WebHookDefinitionManager()));
 
-
-
+            return services;
         }
     }
 }

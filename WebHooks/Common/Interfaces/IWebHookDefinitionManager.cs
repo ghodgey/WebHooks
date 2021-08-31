@@ -7,6 +7,11 @@ namespace WebHooks.Common.Interfaces
     public interface IWebHookDefinitionManager
     {
         /// <summary>
+        /// Adds the specified webhook with only a name specified in the <seealso cref="WebHookDefinition"/>. Throws exception if it is already added
+        /// </summary>
+        void Add(string webhookName);
+
+        /// <summary>
         /// Adds the specified webhook definition. Throws exception if it is already added
         /// </summary>
         void Add(WebHookDefinition webhookDefinition);

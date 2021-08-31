@@ -12,10 +12,9 @@ namespace WebHooks
         private readonly IWebHooksConfiguration _webhooksConfiguration;
         private readonly Dictionary<string, WebHookDefinition> _webhookDefinitions;
 
-        public WebHookDefinitionManager(IList<WebHookDefinition> webHookDefinitions)
+        public WebHookDefinitionManager()
         {
             _webhookDefinitions = new Dictionary<string, WebHookDefinition>();
-            Initialize(webHookDefinitions);
         }
 
         public void Initialize(IList<WebHookDefinition> webHookDefinitions)
@@ -24,6 +23,16 @@ namespace WebHooks
             {
                 Add(definition);
             }
+        }
+
+        public void Add(string webhookName)
+        {
+            if (_webhookDefinitions.ContainsKey(webhookName))
+            {
+                throw new WebHookInitializationException("There is already a webhook definition with given name: " + webhookName + ". Webhook names must be unique!");
+            }
+
+            _webhookDefinitions.Add(webhookName, new WebHookDefinition(webhookName));
         }
 
         public void Add(WebHookDefinition webhookDefinition)
