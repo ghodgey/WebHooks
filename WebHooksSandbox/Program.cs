@@ -13,6 +13,9 @@ namespace WebHooksSandbox
             Console.WriteLine("Starting sandbox...");
 
             var services = new ServiceCollection();
+
+            //Add the webhooks allowed for the project
+            //Allowance to add webhooks here for only certain tenants 
             services.AddWebHooks(option =>
             {
                 option.Manager.Add(nameof(WebHookDefinitionType.DocsReceived));

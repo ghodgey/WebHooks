@@ -93,6 +93,8 @@ namespace WebHooks
                 return false;
             }
 
+            //Implementation of the feature dependency
+
             //if (webhookDefinition.FeatureDependency == null)
             //{
             //    return true;

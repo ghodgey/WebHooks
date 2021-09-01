@@ -1,9 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace WebHooks.Common.Models
 {
     public class WebHookSubscription
     {
+        /// <summary>
+        /// Identifier for the subscription
+        /// </summary>
+        public Guid SubscriptionId { get; set; }
         /// <summary>
         /// Tenant id of the subscribed
         /// </summary>
